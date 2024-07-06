@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:controller="org.example.parcialfinalpoo.HelloController" xmlns:fx="http://javafx.com/fxml">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    <VBox spacing="10">
+        <Label text="Banco Central de Nlogonia - Sistema de Reportes"/>
+
+        <!-- Reporte A -->
+        <Label text="Reporte A: Listar compras de un cliente en un periodo"/>
+        <GridPane hgap="10" vgap="10">
+            <Label text="ID Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="clienteIdFieldA" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Fecha Inicio:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Fecha Fin:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Button text="Generar Reporte A" fx:id="generateReportAButton" onAction="#generateReportA" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        </GridPane>
+
+        <!-- Reporte B -->
+        <Label text="Reporte B: Total gastado por un cliente en un mes específico"/>
+        <GridPane hgap="10" vgap="10">
+            <Label text="ID Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="clienteIdFieldB" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Mes:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="monthField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Año:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="yearField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Button text="Generar Reporte B" fx:id="generateReportBButton" onAction="#generateReportB" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        </GridPane>
+
+        <!-- Reporte C -->
+        <Label text="Reporte C: Listar todas las tarjetas de un cliente"/>
+        <GridPane hgap="10" vgap="10">
+            <Label text="ID Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="clienteIdFieldC" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Button text="Generar Reporte C" fx:id="generateReportCButton" onAction="#generateReportC" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <!-- Reporte D -->
+        <Label text="Reporte D: Clientes por facilitador de tarjeta"/>
+        <GridPane hgap="10" vgap="10">
+            <Label text="Facilitador:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="facilitadorField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Button text="Generar Reporte D" fx:id="generateReportDButton" onAction="#generateReportD" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <!-- Área de texto para mostrar los resultados de los reportes -->
+        <TextArea fx:id="resultArea" prefHeight="300" prefWidth="600" wrapText="true"/>
+    </VBox>
+</GridPane>
+
